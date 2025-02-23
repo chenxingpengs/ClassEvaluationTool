@@ -1,0 +1,145 @@
+﻿<Window x:Class="ClassEvaluationTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:ClassEvaluationTool"
+        Title="课堂评价工具" Height="800" Width="1600"
+        WindowState="Maximized" WindowStyle="None">
+
+    <!-- 主布局：使用 Grid 划分区域 -->
+    <Grid>
+        <!-- 定义 3 行 4 列布局 -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- 第一行：大标题 -->
+            <RowDefinition Height="*"/>
+            <!-- 第二行：优秀小组、有待提升小组和个人 -->
+            <RowDefinition Height="Auto"/>
+            <!-- 第三行：评分栏和提交按钮 -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <!-- 第一列：优秀小组 -->
+            <ColumnDefinition Width="10"/>
+            <!-- 间隔 -->
+            <ColumnDefinition Width="*"/>
+            <!-- 第二列：有待提升小组 -->
+            <ColumnDefinition Width="10"/>
+            <!-- 间隔 -->
+            <ColumnDefinition Width="*"/>
+            <!-- 第三列：有待提升个人 -->
+            <ColumnDefinition Width="10"/>
+            <!-- 间隔 -->
+        </Grid.ColumnDefinitions>
+
+        <!-- 第一行：大标题 -->
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" 
+                   Text="课堂评价" 
+                   FontSize="32" FontWeight="Bold" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Margin="0 20"/>
+
+        <!-- 第二行：优秀小组区域 -->
+        <Border Grid.Row="1" Grid.Column="0" Background="#F5F5F5" Padding="10" Margin="10">
+            <StackPanel>
+                <!-- 标题 -->
+                <TextBlock Text="🏆 优秀小组" FontSize="20" FontWeight="Bold" Margin="0 0 0 10"/>
+
+                <!-- 分割线 -->
+                <Separator Style="{StaticResource MaterialDesignSeparator}" Height="15"/>
+
+                <!-- 小组列表 -->
+                <CheckBox Content="第一组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第二组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第三组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第四组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第五组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第六组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第七组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第八组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第九组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第十组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第十一组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第十二组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第十三组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+            </StackPanel>
+        </Border>
+
+        <!-- 第二行：有待提升小组区域 -->
+        <Border Grid.Row="1" Grid.Column="2" Background="#F5F5F5" Padding="10" Margin="10">
+            <StackPanel>
+                <TextBlock Text="📉 有待提升小组" FontSize="20" FontWeight="Bold" Margin="0 0 0 10"/>
+                <Separator Style="{StaticResource MaterialDesignSeparator}" Height="15"/>
+                <CheckBox Content="第一组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第二组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第三组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第四组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第五组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第六组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第七组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第八组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第九组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第十组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第十一组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第十二组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+                <CheckBox Content="第十三组" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignFilterChipSecondaryCheckBox}" Width="450" />
+            </StackPanel>
+        </Border>
+
+        <!-- 第二行：有待提升个人区域 -->
+        <Border Grid.Row="1" Grid.Column="4" Background="#F5F5F5" Padding="10" Margin="10">
+            <StackPanel>
+                <TextBlock Text="📉 有待提升个人" FontSize="20" FontWeight="Bold" Margin="0 0 0 10"/>
+                <ListView x:Name="NeedImprovementIndividualsList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" FontSize="16" Margin="5"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Content="添加个人" Style="{StaticResource MaterialDesignRaisedButton}" Margin="0 10 0 0"/>
+            </StackPanel>
+        </Border>
+
+        <!-- 第三行：评分栏和提交按钮 -->
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="7" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <!-- 添加文本块 -->
+                <ColumnDefinition Width="*"/>
+                <!-- 评分栏 -->
+                <ColumnDefinition Width="Auto"/>
+                <!-- 提交按钮 -->
+            </Grid.ColumnDefinitions>
+
+            <!-- 课堂综合文本 -->
+            <TextBlock Grid.Column="0"
+               Text="课堂综合："
+               VerticalAlignment="Center"
+               FontSize="18"
+               Margin="10 0"/>
+
+            <!-- 评分栏 -->
+            <materialDesign:RatingBar
+        Grid.Column="1"
+        x:Name="BasicRatingBar"
+        Value="3"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Center"
+        Margin="10 0"/>
+
+            <!-- 提交按钮 -->
+            <Button Grid.Column="2"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Margin="10 0">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <materialDesign:PackIcon Kind="CheckOutline" Margin="0 0 5 0"/>
+                    <TextBlock Text="提交"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+
+    </Grid>
+</Window>
